@@ -29,6 +29,7 @@ export default function Inicio() {
       <Navbar />
 
       <main className="inicio-page-compact">
+        {/* INTRO */}
         <section className="inicio-compact-intro">
           <div className="inicio-compact-container">
             <div className="inicio-compact-eyebrow">
@@ -54,6 +55,7 @@ export default function Inicio() {
           </div>
         </section>
 
+        {/* SERVICIOS */}
         <section className="inicio-compact-services">
           <div className="inicio-compact-container">
             <div className="inicio-compact-heading">
@@ -80,6 +82,7 @@ export default function Inicio() {
           </div>
         </section>
 
+        {/* PROCESO */}
         <section className="inicio-compact-process">
           <div className="inicio-compact-container">
             <div className="inicio-compact-heading">
@@ -124,6 +127,7 @@ export default function Inicio() {
           </div>
         </section>
 
+        {/* PROYECTOS */}
         <section className="inicio-compact-projects">
           <div className="inicio-compact-container">
             <div className="inicio-compact-heading">
@@ -132,6 +136,7 @@ export default function Inicio() {
             </div>
 
             <div className="inicio-compact-project-grid">
+              {/* FIGUMATCH */}
               <article>
                 <span className="inicio-project-type">
                   DIGITAL PRODUCT
@@ -144,11 +149,12 @@ export default function Inicio() {
                   e intercambiar figuritas entre usuarios.
                 </p>
 
-                <a href="/proyectos">
+                <a href="/proyectos/figumatch">
                   Ver proyecto →
                 </a>
               </article>
 
+              {/* PAWTRACE */}
               <article>
                 <span className="inicio-project-type">
                   AI PRODUCT
@@ -161,7 +167,7 @@ export default function Inicio() {
                   reportes, geolocalización y coincidencias inteligentes.
                 </p>
 
-                <a href="/proyectos">
+                <a href="/proyectos/pawtrace">
                   Ver proyecto →
                 </a>
               </article>
@@ -169,6 +175,7 @@ export default function Inicio() {
           </div>
         </section>
 
+        {/* CTA */}
         <section className="inicio-compact-cta">
           <div className="inicio-compact-container">
             <div className="inicio-compact-cta-box">
