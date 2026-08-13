@@ -1,0 +1,773 @@
+/* =========================================================
+   COREIA - SPRINT 2.6
+========================================================= */
+
+.cr-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding-top: 88px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 87% 12%,
+      rgba(0, 185, 255, 0.055),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 8% 55%,
+      rgba(102, 67, 255, 0.035),
+      transparent 28%
+    ),
+    #02040a;
+}
+
+.cr-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(calc(100% - 70px), 1120px);
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   DECORACIÓN
+========================================================= */
+
+.cr-glow {
+  position: absolute;
+
+  top: 160px;
+  right: -180px;
+
+  width: 430px;
+  height: 430px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 185, 255, 0.08),
+      transparent 68%
+    );
+
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.cr-hero {
+  padding: 24px 0 27px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.cr-eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 11px;
+
+  color: #8994ff;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+.cr-eyebrow > span {
+  width: 5px;
+  height: 5px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #00d8ff;
+
+  box-shadow:
+    0 0 8px rgba(0, 216, 255, 0.7);
+}
+
+.cr-hero-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.15fr
+    0.85fr;
+
+  align-items: end;
+
+  gap: 50px;
+}
+
+.cr-hero h1 {
+  max-width: 580px;
+
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 30px;
+  font-weight: 600;
+
+  line-height: 1.06;
+
+  letter-spacing: -1.3px;
+}
+
+.cr-hero h1 > span {
+  background:
+    linear-gradient(
+      90deg,
+      #7659ff,
+      #4778ff,
+      #00d8ef
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.cr-tagline {
+  margin: 7px 0 0;
+
+  color: #6874ff;
+
+  font-size: 8px;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+}
+
+.cr-description {
+  max-width: 390px;
+
+  margin: 0;
+
+  color: #99a3b2;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+.cr-section {
+  display: grid;
+
+  grid-template-columns:
+    48px
+    1fr;
+
+  gap: 20px;
+
+  padding: 25px 0;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.065);
+}
+
+.cr-section-number {
+  padding-top: 2px;
+
+  color: #6672ff;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.cr-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #737eff;
+
+  font-size: 6.5px;
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+}
+
+.cr-section h2 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.5px;
+}
+
+.cr-section-content > p {
+  max-width: 600px;
+
+  margin: 7px 0 0;
+
+  color: #909aa9;
+
+  font-size: 9.5px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   FLUJO
+========================================================= */
+
+.cr-flow {
+  min-height: 48px;
+
+  margin-top: 16px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.006);
+}
+
+.cr-flow span {
+  color: #d5dbe6;
+
+  font-size: 7px;
+  font-weight: 600;
+
+  letter-spacing: 0.9px;
+
+  white-space: nowrap;
+}
+
+.cr-flow i {
+  flex: 1;
+
+  height: 1px;
+
+  margin: 0 13px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(110, 86, 255, 0.48),
+      rgba(0, 216, 255, 0.3)
+    );
+}
+
+/* =========================================================
+   MÉTODO
+========================================================= */
+
+.cr-method-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.cr-method-grid article {
+  min-height: 105px;
+
+  padding: 13px;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.cr-method-grid article:last-child {
+  border-right: none;
+}
+
+.cr-method-grid article > span {
+  color: #6975ff;
+
+  font-size: 6px;
+  font-weight: 700;
+}
+
+.cr-method-grid h3 {
+  margin: 14px 0 4px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cr-method-grid p {
+  margin: 0;
+
+  color: #8d97a6;
+
+  font-size: 8.5px;
+
+  line-height: 1.45;
+}
+
+/* =========================================================
+   FORMA DE PENSAR
+========================================================= */
+
+.cr-statement {
+  padding: 27px 68px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.065);
+}
+
+.cr-statement h2 {
+  max-width: 760px;
+
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.7px;
+}
+
+.cr-statement h2 span {
+  color: #8f99a9;
+}
+
+.cr-values {
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+
+  color: #747f91;
+
+  font-size: 6.5px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+.cr-values i {
+  width: 3px;
+  height: 3px;
+
+  margin: 0 12px;
+
+  border-radius: 50%;
+
+  background: #6470ff;
+}
+
+/* =========================================================
+   PRODUCTOS
+========================================================= */
+
+.cr-products-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 10px;
+}
+
+.cr-product {
+  min-height: 165px;
+
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.075);
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      130deg,
+      rgba(91, 63, 255, 0.025),
+      rgba(0, 190, 255, 0.01)
+    );
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cr-product:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(82, 111, 255, 0.25);
+}
+
+.cr-product-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #6975ff;
+
+  font-size: 6px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.cr-product h3 {
+  margin: 21px 0 5px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.cr-product p {
+  max-width: 420px;
+
+  margin: 0;
+
+  color: #8f99a8;
+
+  font-size: 8.5px;
+
+  line-height: 1.5;
+}
+
+.cr-tech {
+  margin-top: 9px;
+
+  color: #687383;
+
+  font-size: 7px;
+}
+
+.cr-product a {
+  width: fit-content;
+
+  margin-top: auto;
+  padding-top: 13px;
+
+  color: #d7dded;
+
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.cr-product a:hover {
+  color: #00d8ff;
+}
+
+/* =========================================================
+   VISIÓN
+========================================================= */
+
+.cr-vision-grid {
+  display: grid;
+
+  grid-template-columns:
+    0.8fr
+    1.2fr;
+
+  align-items: end;
+
+  gap: 50px;
+}
+
+.cr-vision-grid > p {
+  max-width: 450px;
+
+  margin: 0;
+
+  color: #909aa9;
+
+  font-size: 9px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   PILARES
+========================================================= */
+
+.cr-pillars {
+  min-height: 53px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.065);
+
+  color: #7d8798;
+
+  font-size: 6.5px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.cr-pillars i {
+  width: 3px;
+  height: 3px;
+
+  margin: 0 16px;
+
+  border-radius: 50%;
+
+  background: #6874ff;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cr-cta {
+  min-height: 90px;
+
+  margin: 23px 0 32px;
+  padding: 16px 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  border:
+    1px solid rgba(83, 113, 255, 0.16);
+
+  border-radius: 10px;
+
+  background:
+    radial-gradient(
+      circle at 82% 50%,
+      rgba(0, 190, 255, 0.05),
+      transparent 31%
+    ),
+    rgba(255, 255, 255, 0.006);
+}
+
+.cr-cta > div > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6e79ff;
+
+  font-size: 6px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.cr-cta h2 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1.15;
+}
+
+.cr-cta > a {
+  min-width: 105px;
+  min-height: 34px;
+
+  padding: 0 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border:
+    1px solid rgba(74, 130, 255, 0.5);
+
+  border-radius: 7px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      105deg,
+      rgba(94, 48, 255, 0.57),
+      rgba(0, 177, 255, 0.47)
+    );
+
+  font-size: 8.5px;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .cr-container {
+    width: calc(100% - 36px);
+  }
+
+  .cr-hero-grid {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+  }
+
+  .cr-method-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cr-products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cr-vision-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .cr-page {
+    padding-top: 74px;
+  }
+
+  .cr-container {
+    width: calc(100% - 28px);
+  }
+
+  .cr-hero {
+    padding: 18px 0 20px;
+  }
+
+  .cr-hero h1 {
+    font-size: 23px;
+  }
+
+  .cr-section {
+    grid-template-columns: 30px 1fr;
+
+    gap: 8px;
+
+    padding: 20px 0;
+  }
+
+  .cr-flow {
+    overflow-x: auto;
+  }
+
+  .cr-flow i {
+    min-width: 25px;
+  }
+
+  .cr-method-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cr-method-grid article {
+    min-height: auto;
+
+    border-right: none;
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .cr-method-grid article:last-child {
+    border-bottom: none;
+  }
+
+  .cr-statement {
+    padding: 22px 38px;
+  }
+
+  .cr-statement h2 {
+    font-size: 17px;
+  }
+
+  .cr-values {
+    flex-wrap: wrap;
+
+    gap: 7px;
+  }
+
+  .cr-values i {
+    margin: 0 5px;
+  }
+
+  .cr-pillars {
+    flex-wrap: wrap;
+
+    padding: 15px 0;
+
+    gap: 6px;
+  }
+
+  .cr-pillars i {
+    margin: 0 5px;
+  }
+
+  .cr-cta {
+    min-height: auto;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .cr-cta > a {
+    width: 100%;
+  }
+}
