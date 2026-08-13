@@ -50,12 +50,16 @@ export default async function handler(req, res) {
     const safeServicio = escapeHtml(servicio);
     const safeMensaje = escapeHtml(mensaje).replaceAll("\n", "<br />");
 
-    const { data, error } = await resend.emails.send({
-      /*
-       * PARA LAS PRIMERAS PRUEBAS:
-       * onboarding@resend.dev funciona únicamente con el email
-       * asociado a tu cuenta Resend como destinatario.
-       */
+    /*
+     * =====================================================
+     * 1. EMAIL PARA COREIA
+     * =====================================================
+     */
+
+    const {
+      data: coreiaData,
+      error: coreiaError,
+    } = await resend.emails.send({
       from: "Coreia Web <onboarding@resend.dev>",
 
       to: ["madebycoreia@gmail.com"],
@@ -121,36 +125,66 @@ export default async function handler(req, res) {
                   "
                 >
                   <tr>
-                    <td style="padding:8px 0;color:#667085;width:120px;">
+                    <td
+                      style="
+                        padding:8px 0;
+                        color:#667085;
+                        width:120px;
+                      "
+                    >
                       Nombre
                     </td>
-                    <td style="padding:8px 0;font-weight:600;">
+
+                    <td
+                      style="
+                        padding:8px 0;
+                        font-weight:600;
+                      "
+                    >
                       ${safeNombre}
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="padding:8px 0;color:#667085;">
+                    <td
+                      style="
+                        padding:8px 0;
+                        color:#667085;
+                      "
+                    >
                       Email
                     </td>
+
                     <td style="padding:8px 0;">
                       ${safeEmail}
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="padding:8px 0;color:#667085;">
+                    <td
+                      style="
+                        padding:8px 0;
+                        color:#667085;
+                      "
+                    >
                       Empresa
                     </td>
+
                     <td style="padding:8px 0;">
                       ${safeEmpresa}
                     </td>
                   </tr>
 
                   <tr>
-                    <td style="padding:8px 0;color:#667085;">
+                    <td
+                      style="
+                        padding:8px 0;
+                        color:#667085;
+                      "
+                    >
                       Servicio
                     </td>
+
                     <td style="padding:8px 0;">
                       ${safeServicio}
                     </td>
@@ -211,18 +245,229 @@ export default async function handler(req, res) {
       `,
     });
 
-    if (error) {
-      console.error("RESEND ERROR:", error);
+    if (coreiaError) {
+      console.error(
+        "RESEND ERROR - CONSULTA COREIA:",
+        coreiaError
+      );
 
       return res.status(500).json({
         ok: false,
-        message: error.message || "No se pudo enviar el correo.",
+        message:
+          coreiaError.message ||
+          "No se pudo enviar la consulta.",
       });
     }
 
+    /*
+     * =====================================================
+     * 2. RESPUESTA AUTOMÁTICA AL CLIENTE
+     * =====================================================
+     *
+     * Si este segundo correo falla, NO devolvemos error al
+     * formulario porque la consulta ya llegó a Coreia.
+     */
+
+    const {
+      data: autoReplyData,
+      error: autoReplyError,
+    } = await resend.emails.send({
+      from: "Coreia <onboarding@resend.dev>",
+
+      to: [email],
+
+      replyTo: "madebycoreia@gmail.com",
+
+      subject: "Recibimos tu consulta — Coreia",
+
+      html: `
+        <!doctype html>
+        <html>
+          <body
+            style="
+              margin:0;
+              padding:0;
+              background:#050811;
+              font-family:Arial,Helvetica,sans-serif;
+              color:#ffffff;
+            "
+          >
+            <div
+              style="
+                max-width:640px;
+                margin:0 auto;
+                padding:36px 18px;
+              "
+            >
+              <div
+                style="
+                  background:
+                    linear-gradient(
+                      135deg,
+                      #0b1020,
+                      #07111d
+                    );
+                  border:1px solid #1b2942;
+                  border-radius:16px;
+                  padding:32px;
+                "
+              >
+                <div
+                  style="
+                    font-size:11px;
+                    letter-spacing:2px;
+                    font-weight:700;
+                    color:#7687ff;
+                    margin-bottom:14px;
+                  "
+                >
+                  COREIA
+                </div>
+
+                <h1
+                  style="
+                    margin:0 0 18px;
+                    font-size:25px;
+                    line-height:1.25;
+                    color:#ffffff;
+                  "
+                >
+                  Gracias por escribirnos, ${safeNombre}.
+                </h1>
+
+                <p
+                  style="
+                    margin:0 0 18px;
+                    font-size:14px;
+                    line-height:1.7;
+                    color:#b8c1d2;
+                  "
+                >
+                  Recibimos tu consulta correctamente.
+                  Vamos a revisar la información que nos enviaste
+                  y nos pondremos en contacto con vos a la brevedad.
+                </p>
+
+                <div
+                  style="
+                    margin:24px 0;
+                    padding:16px 18px;
+                    border:1px solid #1a2945;
+                    border-radius:10px;
+                    background:#080d18;
+                  "
+                >
+                  <div
+                    style="
+                      font-size:10px;
+                      letter-spacing:1.4px;
+                      font-weight:700;
+                      color:#6877ff;
+                      margin-bottom:7px;
+                    "
+                  >
+                    TU CONSULTA
+                  </div>
+
+                  <div
+                    style="
+                      font-size:14px;
+                      font-weight:600;
+                      color:#ffffff;
+                      margin-bottom:6px;
+                    "
+                  >
+                    ${safeServicio}
+                  </div>
+
+                  <div
+                    style="
+                      font-size:13px;
+                      line-height:1.6;
+                      color:#929db0;
+                    "
+                  >
+                    ${safeMensaje}
+                  </div>
+                </div>
+
+                <p
+                  style="
+                    margin:0;
+                    font-size:14px;
+                    line-height:1.7;
+                    color:#b8c1d2;
+                  "
+                >
+                  No necesitás tener todo definido.
+                  Podemos ayudarte a transformar una idea,
+                  un problema o una necesidad en un producto digital.
+                </p>
+
+                <div
+                  style="
+                    height:1px;
+                    background:#1a2437;
+                    margin:27px 0;
+                  "
+                ></div>
+
+                <div
+                  style="
+                    font-size:14px;
+                    font-weight:700;
+                    color:#ffffff;
+                    margin-bottom:5px;
+                  "
+                >
+                  Coreia
+                </div>
+
+                <div
+                  style="
+                    font-size:11px;
+                    line-height:1.6;
+                    color:#818da3;
+                  "
+                >
+                  Tecnología · Producto · Inteligencia Artificial
+                </div>
+
+                <div
+                  style="
+                    margin-top:10px;
+                    font-size:10px;
+                    letter-spacing:1px;
+                    color:#6978ff;
+                  "
+                >
+                  WHERE IDEAS BECOME COMPANIES
+                </div>
+              </div>
+            </div>
+          </body>
+        </html>
+      `,
+    });
+
+    if (autoReplyError) {
+      console.error(
+        "RESEND ERROR - RESPUESTA AUTOMÁTICA:",
+        autoReplyError
+      );
+    }
+
+    /*
+     * =====================================================
+     * RESPUESTA DEL ENDPOINT
+     * =====================================================
+     */
+
     return res.status(200).json({
       ok: true,
-      id: data?.id,
+      id: coreiaData?.id,
+      autoReplySent: !autoReplyError,
+      autoReplyId: autoReplyData?.id || null,
       message: "Consulta enviada correctamente.",
     });
   } catch (error) {
@@ -230,7 +475,8 @@ export default async function handler(req, res) {
 
     return res.status(500).json({
       ok: false,
-      message: "Ocurrió un error al enviar la consulta.",
+      message:
+        "Ocurrió un error al enviar la consulta.",
     });
   }
 }
