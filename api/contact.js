@@ -60,7 +60,7 @@ export default async function handler(req, res) {
       data: coreiaData,
       error: coreiaError,
     } = await resend.emails.send({
-      from: "Coreia Web <onboarding@resend.dev>",
+      from: "Coreia <hola@tudominio.com>",
 
       to: ["madebycoreia@gmail.com"],
 
