@@ -173,16 +173,16 @@ img {
 .coreia-brand-copy strong {
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
 
-  letter-spacing: 4.3px;
+  letter-spacing: 4px;
 }
 
 .coreia-brand-copy small {
   color: var(--muted);
 
-  font-size: 4.5px;
+  font-size: 7.5px;
   font-weight: 600;
 
   letter-spacing: 1.1px;
@@ -205,7 +205,7 @@ img {
 
   color: #4b4f56;
 
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 500;
 
   transition: color 0.2s ease;
@@ -246,7 +246,7 @@ img {
 
   color: var(--blue);
 
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 600;
 
   letter-spacing: 0.7px;
@@ -299,7 +299,7 @@ img {
 
   color: #60656d;
 
-  font-size: 7px;
+  font-size: 9px;
   font-weight: 600;
 
   letter-spacing: 1.4px;
@@ -319,7 +319,7 @@ img {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(48px, 5.3vw, 76px);
+  font-size: clamp(54px, 5.8vw, 84px);
   font-weight: 400;
 
   line-height: 0.97;
@@ -338,9 +338,9 @@ img {
 
   color: var(--muted);
 
-  font-size: 12.5px;
+  font-size: 15px;
 
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .coreia-hero-actions {
@@ -364,7 +364,7 @@ img {
 
   color: var(--blue);
 
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 600;
 
   letter-spacing: 0.8px;
@@ -385,7 +385,7 @@ img {
 .coreia-hero-location {
   color: var(--muted);
 
-  font-size: 7px;
+  font-size: 9px;
 
   letter-spacing: 0.9px;
 
@@ -511,7 +511,7 @@ img {
 
   color: #9298a2;
 
-  font-size: 6px;
+  font-size: 7.5px;
   font-weight: 600;
 
   letter-spacing: 1.2px;
@@ -587,12 +587,12 @@ img {
 .coreia-process-preview div span {
   color: var(--blue);
 
-  font-size: 6px;
+  font-size: 7.5px;
   font-weight: 600;
 }
 
 .coreia-process-preview div strong {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -640,7 +640,7 @@ img {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(38px, 4.4vw, 58px);
+  font-size: clamp(42px, 4.8vw, 64px);
   font-weight: 400;
 
   line-height: 0.98;
@@ -655,9 +655,9 @@ img {
 
   color: var(--muted);
 
-  font-size: 11px;
+  font-size: 13.5px;
 
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .coreia-work-grid {
@@ -692,7 +692,7 @@ img {
 
   color: #8a9099;
 
-  font-size: 6px;
+  font-size: 7.5px;
   font-weight: 600;
 
   letter-spacing: 0.8px;
@@ -837,7 +837,7 @@ img {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
 
   letter-spacing: -0.7px;
@@ -850,9 +850,9 @@ img {
 
   color: var(--muted);
 
-  font-size: 9px;
+  font-size: 12px;
 
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .coreia-work-action {
@@ -862,7 +862,7 @@ img {
 
   color: var(--blue);
 
-  font-size: 7px;
+  font-size: 9px;
   font-weight: 600;
 
   letter-spacing: 0.5px;
@@ -917,7 +917,7 @@ a.coreia-work-action:hover {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(40px, 4.5vw, 58px);
+  font-size: clamp(44px, 4.9vw, 64px);
   font-weight: 400;
 
   line-height: 1;
@@ -932,7 +932,7 @@ a.coreia-work-action:hover {
 
   color: var(--muted);
 
-  font-size: 11px;
+  font-size: 13.5px;
 
   line-height: 1.7;
 }
@@ -978,7 +978,7 @@ a.coreia-work-action:hover {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 500;
 
   line-height: 1.1;
@@ -991,9 +991,9 @@ a.coreia-work-action:hover {
 
   color: var(--muted);
 
-  font-size: 10px;
+  font-size: 12.5px;
 
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .coreia-capability-row:hover {
@@ -1042,7 +1042,7 @@ a.coreia-work-action:hover {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(42px, 4.8vw, 62px);
+  font-size: clamp(46px, 5.1vw, 68px);
   font-weight: 400;
 
   line-height: 0.98;
@@ -1061,7 +1061,7 @@ a.coreia-work-action:hover {
 
   color: var(--muted);
 
-  font-size: 11px;
+  font-size: 13.5px;
 
   line-height: 1.75;
 }
@@ -1107,7 +1107,7 @@ a.coreia-work-action:hover {
 .coreia-studio-meta span {
   color: var(--blue);
 
-  font-size: 6px;
+  font-size: 7.5px;
   font-weight: 600;
 
   letter-spacing: 1.2px;
@@ -1116,7 +1116,7 @@ a.coreia-work-action:hover {
 .coreia-studio-meta strong {
   color: var(--text);
 
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -1148,7 +1148,7 @@ a.coreia-work-action:hover {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(42px, 5vw, 66px);
+  font-size: clamp(46px, 5.3vw, 72px);
   font-weight: 400;
 
   line-height: 0.96;
@@ -1167,7 +1167,7 @@ a.coreia-work-action:hover {
 
   color: #7194ff;
 
-  font-size: 10px;
+  font-size: 12px;
 
   transition:
     color 0.25s ease,
@@ -1218,7 +1218,7 @@ a.coreia-work-action:hover {
 .coreia-footer-brand strong {
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
 
   letter-spacing: 4px;
@@ -1227,7 +1227,7 @@ a.coreia-work-action:hover {
 .coreia-footer-brand span {
   color: #8c9199;
 
-  font-size: 8px;
+  font-size: 10px;
 
   letter-spacing: 0.8px;
 
@@ -1244,7 +1244,7 @@ a.coreia-work-action:hover {
 .coreia-footer-location span {
   color: #7194ff;
 
-  font-size: 6px;
+  font-size: 7.5px;
   font-weight: 600;
 
   letter-spacing: 1.2px;
@@ -1268,7 +1268,7 @@ a.coreia-work-action:hover {
 
   color: #d8dbe0;
 
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 500;
 
   transition:
@@ -1316,7 +1316,7 @@ a.coreia-work-action:hover {
 
   color: #70757d;
 
-  font-size: 7px;
+  font-size: 9px;
 
   letter-spacing: 0.8px;
 }
@@ -1635,7 +1635,7 @@ a.coreia-work-action:hover {
   }
 
   .coreia-hero h1 {
-    font-size: 46px;
+    font-size: 50px;
 
     line-height: 0.98;
 
@@ -1645,7 +1645,7 @@ a.coreia-work-action:hover {
   .coreia-hero-content > p {
     margin-top: 20px;
 
-    font-size: 12.5px;
+    font-size: 14px;
   }
 
   .coreia-hero-actions {
@@ -1715,7 +1715,7 @@ a.coreia-work-action:hover {
   }
 
   .coreia-work-heading h2 {
-    font-size: 39px;
+    font-size: 42px;
 
     letter-spacing: -2px;
   }
@@ -1746,7 +1746,7 @@ a.coreia-work-action:hover {
   }
 
   .coreia-work-info h3 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   /* CAPABILITIES */
@@ -1760,7 +1760,7 @@ a.coreia-work-action:hover {
   }
 
   .coreia-capabilities-heading h2 {
-    font-size: 39px;
+    font-size: 42px;
 
     letter-spacing: -2px;
   }
@@ -1768,7 +1768,7 @@ a.coreia-work-action:hover {
   .coreia-capabilities-heading p {
     margin-top: 18px;
 
-    font-size: 10.5px;
+    font-size: 12px;
   }
 
   .coreia-capability-row {
@@ -1782,7 +1782,7 @@ a.coreia-work-action:hover {
   }
 
   .coreia-capability-row h3 {
-    font-size: 19px;
+    font-size: 21px;
   }
 
   .coreia-capability-row p {
@@ -1790,9 +1790,9 @@ a.coreia-work-action:hover {
 
     margin-top: -2px;
 
-    font-size: 9px;
+    font-size: 11px;
 
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
   .coreia-capability-row:hover {
@@ -1815,7 +1815,7 @@ a.coreia-work-action:hover {
   }
 
   .coreia-studio-right > p {
-    font-size: 10.5px;
+    font-size: 12px;
   }
 
   .coreia-studio-meta {
@@ -1837,7 +1837,7 @@ a.coreia-work-action:hover {
   }
 
   .coreia-contact-preview h2 {
-    font-size: 42px;
+    font-size: 46px;
 
     letter-spacing: -2.5px;
   }
@@ -1902,7 +1902,7 @@ a.coreia-work-action:hover {
   }
 
   .coreia-hero h1 {
-    font-size: 42px;
+    font-size: 45px;
   }
 
   .coreia-symbol-large {
@@ -1910,11 +1910,11 @@ a.coreia-work-action:hover {
   }
 
   .coreia-work-info h3 {
-    font-size: 19px;
+    font-size: 21px;
   }
 
   .coreia-studio-left h2 {
-    font-size: 36px;
+    font-size: 39px;
   }
 }
 
@@ -1968,4 +1968,100 @@ a.coreia-work-action:hover {
   .coreia-contact-preview a:hover {
     transform: none;
   }
+}
+
+/* =========================================================
+   LANGUAGE SWITCHER — SVG FLAGS
+========================================================= */
+
+.coreia-nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  min-width: max-content;
+}
+
+.coreia-language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.coreia-language-switcher button {
+  position: relative;
+  width: 29px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 29px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.42;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.coreia-language-switcher button img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+
+.coreia-language-switcher button:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+.coreia-language-switcher button.active {
+  opacity: 1;
+}
+
+.coreia-language-switcher button.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--blue);
+  transform: translateX(-50%);
+}
+
+.coreia-language-switcher button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+@media (max-width: 980px) {
+  .coreia-nav-right { gap: 11px; }
+  .coreia-language-switcher { gap: 8px; }
+  .coreia-language-switcher button { width: 28px; height: 19px; flex-basis: 28px; }
+}
+
+@media (max-width: 620px) {
+  .coreia-navbar-inner { grid-template-columns: minmax(0, 1fr) auto; }
+  .coreia-nav-right { gap: 0; }
+  .coreia-language-switcher { gap: 8px; }
+  .coreia-language-switcher button { width: 27px; height: 18px; flex-basis: 27px; }
+  .coreia-nav-cta { display: none; }
+}
+
+@media (max-width: 400px) {
+  .coreia-language-switcher { gap: 7px; }
+  .coreia-language-switcher button { width: 25px; height: 17px; flex-basis: 25px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coreia-language-switcher button { transition: none; }
+  .coreia-language-switcher button:hover { transform: none; }
 }

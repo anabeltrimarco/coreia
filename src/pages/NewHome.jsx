@@ -1,8 +1,14 @@
 import React, { useEffect } from "react";
 import NewNavbar from "../components/NewNavbar";
+import translations from "../data/translations";
 import "../styles/coreia-new.css";
 
-export default function NewHome() {
+export default function NewHome({
+  language = "en",
+  setLanguage,
+}) {
+  const t = translations[language] || translations.en;
+
   useEffect(() => {
     const elements = document.querySelectorAll(".coreia-reveal");
 
@@ -36,44 +42,59 @@ export default function NewHome() {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [language]);
 
   return (
     <div className="coreia-site" id="top">
-      <NewNavbar />
+      <NewNavbar
+        language={language}
+        setLanguage={setLanguage}
+        t={t}
+      />
 
       <main>
+        {/* =====================================================
+            HERO
+        ====================================================== */}
         <section className="coreia-hero">
           <div className="coreia-container coreia-hero-grid">
             <div className="coreia-hero-content coreia-hero-enter">
               <div className="coreia-eyebrow">
                 <span />
-                DIGITAL PRODUCT STUDIO
+                {t.hero.eyebrow}
               </div>
 
               <h1>
-                We turn ideas
+                {t.hero.title1}
                 <br />
-                into <span>products.</span>
+                <span>{t.hero.title2}</span>
               </h1>
 
               <p>
-                Strategy, design, software and artificial intelligence
-                for ideas worth building.
+                {t.hero.description}
               </p>
 
               <div className="coreia-hero-actions">
-                <a href="#work" className="coreia-primary-link">
-                  Explore our work
-                  <span>↗</span>
+                <a
+                  href="#work"
+                  className="coreia-primary-link"
+                >
+                  {t.hero.explore}
+
+                  <span>
+                    ↗
+                  </span>
                 </a>
 
                 <span className="coreia-hero-location">
-                  Buenos Aires · Argentina
+                  {t.hero.location}
                 </span>
               </div>
             </div>
 
+            {/* =================================================
+                HERO VISUAL
+            ================================================= */}
             <div
               className="coreia-hero-visual coreia-hero-visual-enter"
               aria-hidden="true"
@@ -97,74 +118,108 @@ export default function NewHome() {
               <span className="coreia-node node-two" />
               <span className="coreia-node node-three" />
 
-              <div className="coreia-system-label label-one">PRODUCT</div>
-              <div className="coreia-system-label label-two">AI</div>
-              <div className="coreia-system-label label-three">BUILD</div>
+              <div className="coreia-system-label label-one">
+                PRODUCT
+              </div>
+
+              <div className="coreia-system-label label-two">
+                AI
+              </div>
+
+              <div className="coreia-system-label label-three">
+                BUILD
+              </div>
             </div>
           </div>
 
+          {/* =================================================
+              PROCESS
+          ================================================= */}
           <div className="coreia-container">
             <div className="coreia-process-preview coreia-hero-process-enter">
               <div>
                 <span>01</span>
-                <strong>Idea</strong>
+                <strong>
+                  {t.process.idea}
+                </strong>
               </div>
 
               <i>→</i>
 
               <div>
                 <span>02</span>
-                <strong>Strategy</strong>
+                <strong>
+                  {t.process.strategy}
+                </strong>
               </div>
 
               <i>→</i>
 
               <div>
                 <span>03</span>
-                <strong>Build</strong>
+                <strong>
+                  {t.process.build}
+                </strong>
               </div>
 
               <i>→</i>
 
               <div>
                 <span>04</span>
-                <strong>AI</strong>
+                <strong>
+                  {t.process.ai}
+                </strong>
               </div>
 
               <i>→</i>
 
               <div>
                 <span>05</span>
-                <strong>Product</strong>
+                <strong>
+                  {t.process.product}
+                </strong>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="coreia-work" id="work">
+        {/* =====================================================
+            SELECTED WORK
+        ====================================================== */}
+        <section
+          className="coreia-work"
+          id="work"
+        >
           <div className="coreia-container">
             <div className="coreia-work-heading coreia-reveal">
-              <span>SELECTED WORK</span>
+              <span>
+                {t.work.eyebrow}
+              </span>
 
               <div>
                 <h2>
-                  Products built
+                  {t.work.title1}
                   <br />
-                  with purpose.
+                  {t.work.title2}
                 </h2>
 
                 <p>
-                  Strategy, software and artificial intelligence
-                  transformed into real digital products.
+                  {t.work.description}
                 </p>
               </div>
             </div>
 
             <div className="coreia-work-grid">
+              {/* =================================================
+                  AGENTOFFICE AI
+              ================================================= */}
               <article className="coreia-work-card coreia-reveal coreia-delay-1">
                 <div className="coreia-work-card-top">
                   <span>01</span>
-                  <span>AI · PRODUCTIVITY · BUSINESS</span>
+
+                  <span>
+                    {t.work.agentoffice.category}
+                  </span>
                 </div>
 
                 <div className="coreia-work-visual real-project">
@@ -181,25 +236,31 @@ export default function NewHome() {
 
                 <div className="coreia-work-info">
                   <div>
-                    <h3>AgentOffice AI</h3>
+                    <h3>
+                      {t.work.agentoffice.title}
+                    </h3>
 
                     <p>
-                      An intelligent business workspace that brings
-                      clients, tasks, follow-ups and AI assistance
-                      into one place.
+                      {t.work.agentoffice.description}
                     </p>
                   </div>
 
                   <span className="coreia-work-action">
-                    Coming soon
+                    {t.work.comingSoon}
                   </span>
                 </div>
               </article>
 
+              {/* =================================================
+                  PAWTRACE AI
+              ================================================= */}
               <article className="coreia-work-card coreia-reveal coreia-delay-2">
                 <div className="coreia-work-card-top">
                   <span>02</span>
-                  <span>AI · GEOLOCATION · MATCHING</span>
+
+                  <span>
+                    {t.work.pawtrace.category}
+                  </span>
                 </div>
 
                 <div className="coreia-work-visual real-project pawtrace-real">
@@ -212,12 +273,12 @@ export default function NewHome() {
 
                 <div className="coreia-work-info">
                   <div>
-                    <h3>PawTrace AI</h3>
+                    <h3>
+                      {t.work.pawtrace.title}
+                    </h3>
 
                     <p>
-                      Technology designed to reconnect lost pets
-                      with their homes through reports, maps and
-                      intelligent matching.
+                      {t.work.pawtrace.description}
                     </p>
                   </div>
 
@@ -227,15 +288,21 @@ export default function NewHome() {
                     rel="noopener noreferrer"
                     className="coreia-work-action"
                   >
-                    View project ↗
+                    {t.work.viewProject}
                   </a>
                 </div>
               </article>
 
+              {/* =================================================
+                  GUARDIAN AI
+              ================================================= */}
               <article className="coreia-work-card coreia-reveal coreia-delay-1">
                 <div className="coreia-work-card-top">
                   <span>03</span>
-                  <span>AI · SECURITY · FRAUD DETECTION</span>
+
+                  <span>
+                    {t.work.guardian.category}
+                  </span>
                 </div>
 
                 <div className="coreia-work-visual real-project guardian-real">
@@ -252,25 +319,31 @@ export default function NewHome() {
 
                 <div className="coreia-work-info">
                   <div>
-                    <h3>GuardianAI</h3>
+                    <h3>
+                      {t.work.guardian.title}
+                    </h3>
 
                     <p>
-                      Artificial intelligence that analyzes digital
-                      content and helps identify scams, suspicious
-                      behavior and online threats.
+                      {t.work.guardian.description}
                     </p>
                   </div>
 
                   <span className="coreia-work-action">
-                    Coming soon
+                    {t.work.comingSoon}
                   </span>
                 </div>
               </article>
 
+              {/* =================================================
+                  FIGUMATCH
+              ================================================= */}
               <article className="coreia-work-card coreia-reveal coreia-delay-2">
                 <div className="coreia-work-card-top">
                   <span>04</span>
-                  <span>COMMUNITY · COLLECTION · PLATFORM</span>
+
+                  <span>
+                    {t.work.figumatch.category}
+                  </span>
                 </div>
 
                 <div className="coreia-work-visual real-project figumatch-real">
@@ -283,12 +356,12 @@ export default function NewHome() {
 
                 <div className="coreia-work-info">
                   <div>
-                    <h3>FiguMatch</h3>
+                    <h3>
+                      {t.work.figumatch.title}
+                    </h3>
 
                     <p>
-                      A digital platform for managing collections,
-                      finding missing stickers and connecting people
-                      who want to exchange duplicates.
+                      {t.work.figumatch.description}
                     </p>
                   </div>
 
@@ -298,7 +371,7 @@ export default function NewHome() {
                     rel="noopener noreferrer"
                     className="coreia-work-action"
                   >
-                    View project ↗
+                    {t.work.viewProject}
                   </a>
                 </div>
               </article>
@@ -306,109 +379,155 @@ export default function NewHome() {
           </div>
         </section>
 
-        <section className="coreia-capabilities" id="services">
+        {/* =====================================================
+            CAPABILITIES
+        ====================================================== */}
+        <section
+          className="coreia-capabilities"
+          id="services"
+        >
           <div className="coreia-container">
             <div className="coreia-capabilities-heading coreia-reveal">
-              <span>CAPABILITIES</span>
+              <span>
+                {t.capabilities.eyebrow}
+              </span>
 
               <div>
                 <h2>
-                  From idea
+                  {t.capabilities.title1}
                   <br />
-                  to product.
+                  {t.capabilities.title2}
                 </h2>
 
                 <p>
-                  Strategy, design, engineering and artificial intelligence
-                  working as one product system.
+                  {t.capabilities.description}
                 </p>
               </div>
             </div>
 
             <div className="coreia-capabilities-list">
+              {/* PRODUCT STRATEGY */}
               <article className="coreia-capability-row coreia-reveal">
-                <span className="coreia-capability-number">01</span>
+                <span className="coreia-capability-number">
+                  01
+                </span>
 
-                <h3>Product Strategy</h3>
+                <h3>
+                  {t.capabilities.strategy.title}
+                </h3>
 
                 <p>
-                  Research · Product definition · Positioning · Roadmap
+                  {t.capabilities.strategy.description}
                 </p>
               </article>
 
+              {/* PRODUCT DESIGN */}
               <article className="coreia-capability-row coreia-reveal coreia-delay-1">
-                <span className="coreia-capability-number">02</span>
+                <span className="coreia-capability-number">
+                  02
+                </span>
 
-                <h3>Product Design</h3>
+                <h3>
+                  {t.capabilities.design.title}
+                </h3>
 
                 <p>
-                  UX · UI · Prototyping · Design systems
+                  {t.capabilities.design.description}
                 </p>
               </article>
 
+              {/* ENGINEERING */}
               <article className="coreia-capability-row coreia-reveal coreia-delay-2">
-                <span className="coreia-capability-number">03</span>
+                <span className="coreia-capability-number">
+                  03
+                </span>
 
-                <h3>Engineering</h3>
+                <h3>
+                  {t.capabilities.engineering.title}
+                </h3>
 
                 <p>
-                  Frontend · Backend · APIs · Databases · Cloud
+                  {t.capabilities.engineering.description}
                 </p>
               </article>
 
+              {/* ARTIFICIAL INTELLIGENCE */}
               <article className="coreia-capability-row coreia-reveal coreia-delay-3">
-                <span className="coreia-capability-number">04</span>
+                <span className="coreia-capability-number">
+                  04
+                </span>
 
-                <h3>Artificial Intelligence</h3>
+                <h3>
+                  {t.capabilities.ai.title}
+                </h3>
 
                 <p>
-                  Generative AI · Automation · Agents · Intelligent systems
+                  {t.capabilities.ai.description}
                 </p>
               </article>
             </div>
           </div>
         </section>
 
-        <section className="coreia-studio" id="studio">
+        {/* =====================================================
+            STUDIO
+        ====================================================== */}
+        <section
+          className="coreia-studio"
+          id="studio"
+        >
           <div className="coreia-container">
             <div className="coreia-studio-grid">
               <div className="coreia-studio-left coreia-reveal">
-                <span>COREIA</span>
+                <span>
+                  {t.studio.eyebrow}
+                </span>
 
                 <h2>
-                  We build digital products
+                  {t.studio.title1}
                   <br />
-                  from idea to launch.
+                  {t.studio.title2}
                 </h2>
               </div>
 
               <div className="coreia-studio-right coreia-reveal coreia-delay-1">
                 <p>
-                  Coreia is an independent digital product studio
-                  focused on strategy, design, software engineering
-                  and artificial intelligence.
+                  {t.studio.p1}
                 </p>
 
                 <p>
-                  We turn early ideas into real products, combining
-                  product thinking with technology to create useful,
-                  scalable and meaningful digital experiences.
+                  {t.studio.p2}
                 </p>
 
                 <div className="coreia-studio-meta">
                   <div>
-                    <span>BASED IN</span>
-                    <strong>Buenos Aires · Argentina</strong>
+                    <span>
+                      {t.studio.basedIn}
+                    </span>
+
+                    <strong>
+                      {t.studio.basedInValue}
+                    </strong>
                   </div>
 
                   <div>
-                    <span>FOCUS</span>
-                    <strong>Product · Software · AI</strong>
+                    <span>
+                      {t.studio.focus}
+                    </span>
+
+                    <strong>
+                      {t.studio.focusValue}
+                    </strong>
                   </div>
 
                   <div>
-                    <span>MODEL</span>
-                    <strong>Independent Studio</strong>
+                    <span>
+                      {t.studio.model}
+                    </span>
+
+                    <strong>
+                      {t.studio.modelValue}
+                    </strong>
                   </div>
                 </div>
               </div>
@@ -416,14 +535,22 @@ export default function NewHome() {
           </div>
         </section>
 
-        <section className="coreia-contact-preview" id="contact">
+        {/* =====================================================
+            CONTACT
+        ====================================================== */}
+        <section
+          className="coreia-contact-preview"
+          id="contact"
+        >
           <div className="coreia-container coreia-reveal">
-            <span>START A PROJECT</span>
+            <span>
+              {t.contact.eyebrow}
+            </span>
 
             <h2>
-              Have an idea
+              {t.contact.title1}
               <br />
-              worth building?
+              {t.contact.title2}
             </h2>
 
             <a href="mailto:madebycoreia@gmail.com">
@@ -433,23 +560,38 @@ export default function NewHome() {
         </section>
       </main>
 
+      {/* =====================================================
+          FOOTER
+      ====================================================== */}
       <footer className="coreia-footer">
         <div className="coreia-container">
           <div className="coreia-footer-top">
             <div className="coreia-footer-brand">
-              <strong>COREIA</strong>
-              <span>Where ideas become companies</span>
+              <strong>
+                COREIA
+              </strong>
+
+              <span>
+                {t.footer.tagline}
+              </span>
             </div>
 
             <div className="coreia-footer-location">
-              <span>BASED IN</span>
-              <strong>Buenos Aires · Argentina</strong>
+              <span>
+                {t.footer.basedIn}
+              </span>
+
+              <strong>
+                Buenos Aires · Argentina
+              </strong>
             </div>
 
             <div className="coreia-footer-social">
               <a
-                href="#"
-                onClick={(event) => event.preventDefault()}
+                href="https://www.linkedin.com/company/coreia-tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Coreia on LinkedIn"
               >
                 LinkedIn ↗
               </a>
@@ -464,10 +606,12 @@ export default function NewHome() {
           </div>
 
           <div className="coreia-footer-bottom">
-            <span>© 2026 COREIA</span>
+            <span>
+              © 2026 COREIA
+            </span>
 
             <a href="#top">
-              Back to top ↑
+              {t.footer.backToTop}
             </a>
           </div>
         </div>
